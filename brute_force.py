@@ -10,8 +10,8 @@ def compute_distances(data, query, dist="L2"):
     distances = np.zeros((len(data),), dtype=np.float32)
     if dist == "L2":
         distances = np.sqrt(np.sum((data - query)**2, axis=1))
-    elif dist == "Chi-2":
-        distances = np.sum((data-query)**2/(data+query),axis=1)
+    elif dist == "chi-2":
+        distances = np.sum(((data-query)**2)/(data+query),axis=1)
     return distances
 
 
